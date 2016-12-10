@@ -1,0 +1,12 @@
+//Iniciar novo projeto no Lumen
+composer create-project laravel/lumen --prefer-dist
+
+//Iniciar o servidor
+php -S localhost:8000 -t ./public
+
+//Cria as migrations
+php artisan make:migration create_pessoas_table --create-pessoas
+
+//Roda as migration
+php artisan migration
+php artisan migrate:refresh
