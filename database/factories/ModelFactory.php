@@ -18,7 +18,10 @@
 //    ];
 //});
 
-$factory->define(\CodeAgenda\Entities\Pessoa::class, function (Faker\Generator $faker){
+use CodeAgenda\Entities\Pessoa;
+use CodeAgenda\Entities\Telefone;
+
+$factory->define(Pessoa::class, function ($faker) {
     return[
         'nome' => $faker->name,
         'apelido' => $faker->firstname,
@@ -26,7 +29,7 @@ $factory->define(\CodeAgenda\Entities\Pessoa::class, function (Faker\Generator $
     ];
 });
 
-$factory->define(\CodeAgenda\Entities\Telefone::class, function (Faker\Generator $faker){
+$factory->define(Telefone::class, function ($faker) {
     return[
         'descricao' => $faker->randomElement(['Residencial', 'Comercial', 'Celular', 'Recados']),
         'codpais' => $faker->optional(0.7, 55)->numberBetween(1,197), //70% dos casos vai ser o codigo 55 ou entao um numero entre 1 e 197
