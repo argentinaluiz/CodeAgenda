@@ -2,7 +2,7 @@
 
 namespace CodeAgenda\Http\Controllers;
 
-class IndexController extends Controller
+class AgendaController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -15,6 +15,6 @@ class IndexController extends Controller
     }
 
     public function index(){
-        return view('layout');
+        return view('agenda');
     }
 }
