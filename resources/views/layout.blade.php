@@ -46,7 +46,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-12 btn-row">
             <a href="#" class="btn btn-primary">Novo Contato</a>
         </div>
     </div>
@@ -55,6 +55,6 @@
     </div>
 </div>
 
-<script src="js/scripts.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
