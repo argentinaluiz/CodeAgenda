@@ -14,7 +14,9 @@ class CreatePessoasTable extends Migration
     public function up()
     {
         Schema::create('pessoas', function (Blueprint $table) {
-            $table->increments('idPessoa');
+            $table->engine = 'InnoDB';
+
+            $table->increments('pessoa_id');
             $table->string('nome')->unique();
             $table->string('apelido', 50);
             $table->enum('sexo', ['F', 'M']);

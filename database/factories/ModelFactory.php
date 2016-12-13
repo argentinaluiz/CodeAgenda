@@ -36,6 +36,6 @@ $factory->define(Telefone::class, function ($faker) {
         'ddd' => $faker->numberBetween(11,91),
         'prefixo' => $faker->randomNumber(4),
         'sufixo' => $faker->randomNumber(4),
-        'idPessoa' => $faker->numberBetween(1,30)
+        'pessoa_id' => $faker->numberBetween(1, 30)
     ];
 });

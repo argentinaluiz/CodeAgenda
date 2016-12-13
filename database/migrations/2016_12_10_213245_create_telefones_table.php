@@ -14,7 +14,9 @@ class CreateTelefonesTable extends Migration
     public function up()
     {
         Schema::create('telefones', function (Blueprint $table) {
-            $table->increments('idTelefone');
+            $table->engine = 'InnoDB';
+
+            $table->increments('telefone_id');
             $table->string('descricao', 50);
             $table->string('codpais', 5);
             $table->smallInteger('ddd');
@@ -22,8 +24,8 @@ class CreateTelefonesTable extends Migration
             $table->integer('sufixo');
             $table->timestamps();
 
-            $table->Integer('idPessoa', false, true);
-            $table->foreign('idPessoa')->references('idPessoa')->on('pessoas')->onDelete('cascade');
+            $table->Integer('pessoa_id', false, true);
+            $table->foreign('pessoa_id')->references('pessoa_id')->on('pessoas')->onDelete('cascade');
         });
     }
 
