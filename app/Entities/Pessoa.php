@@ -24,6 +24,6 @@ class Pessoa extends Model
     //tabela relacionada com a tabela pessoa
     public function telefones()
     {
-        //
+        return $this->hasMany(Telefone::class);
     }
 }
