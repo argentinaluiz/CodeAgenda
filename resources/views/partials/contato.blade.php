@@ -8,7 +8,7 @@
             @foreach($pessoa->telefones as $telefone)
                 <tr>
                     <td>{{$telefone->descricao}}</td>
-                    <td>{{$telefone->codpais}}{{$telefone->ddd}}{{$telefone->prefixo}}-{{$telefone->sufixo}}</td>
+                    <td>{{$telefone->numero}}</td>
                     <td>
                         <a href="#" class="text-danger"><i class="fa fa-minus-circle"></i></a>
                     </td>

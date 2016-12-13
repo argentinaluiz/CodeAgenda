@@ -21,4 +21,10 @@ class Telefone extends Model
         'prefixo',
         'sufixo'
     ];
+
+    //Na página eu chamei apenas a palavra numero e ele já sabe que é esse método ({{$telefone->numero}})
+    public function getNumeroAttribute()
+    {
+        return "{$this->codpais} ({$this->ddd}) {$this->prefixo}-{$this->sufixo}";
+    }
 }
