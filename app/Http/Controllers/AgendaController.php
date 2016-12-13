@@ -2,19 +2,12 @@
 
 namespace CodeAgenda\Http\Controllers;
 
+use CodeAgenda\Entities\Pessoa;
+
 class AgendaController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        //
-    }
-
     public function index(){
-        return view('agenda');
+        $pessoas = Pessoa::all();
+        return view('agenda', compact('pessoas'));
     }
 }
