@@ -39,13 +39,13 @@ if (typeof jQuery === 'undefined') {
             MozTransition: 'transitionend',
             OTransition: 'oTransitionEnd otransitionend',
             transition: 'transitionend'
-        }
+    }
 
         for (var name in transEndEventNames) {
             if (el.style[name] !== undefined) {
                 return {end: transEndEventNames[name]}
             }
-        }
+    }
 
         return false // explicit for ie8 (  ._.)
     }
@@ -130,7 +130,7 @@ if (typeof jQuery === 'undefined') {
         function removeElement() {
             // detach from parent, fire event then clean up data
             $parent.detach().trigger('closed.bs.alert').remove()
-        }
+    }
 
         $.support.transition && $parent.hasClass('fade') ?
             $parent
@@ -245,7 +245,7 @@ if (typeof jQuery === 'undefined') {
         } else {
             this.$element.attr('aria-pressed', !this.$element.hasClass('active'))
             this.$element.toggleClass('active')
-        }
+    }
     }
 
 
@@ -355,7 +355,7 @@ if (typeof jQuery === 'undefined') {
                 break
             default:
                 return
-        }
+    }
 
         e.preventDefault()
     }
@@ -407,7 +407,7 @@ if (typeof jQuery === 'undefined') {
         if (this.$element.find('.next, .prev').length && $.support.transition) {
             this.$element.trigger($.support.transition.end)
             this.cycle(true)
-        }
+    }
 
         this.interval = clearInterval(this.interval)
 
@@ -472,7 +472,7 @@ if (typeof jQuery === 'undefined') {
             $next.addClass('active')
             this.sliding = false
             this.$element.trigger(slidEvent)
-        }
+    }
 
         isCycling && this.cycle()
 
@@ -528,7 +528,7 @@ if (typeof jQuery === 'undefined') {
 
         if (slideIndex) {
             $target.data('bs.carousel').to(slideIndex)
-        }
+    }
 
         e.preventDefault()
     }
@@ -541,7 +541,7 @@ if (typeof jQuery === 'undefined') {
         $('[data-ride="carousel"]').each(function () {
             var $carousel = $(this)
             Plugin.call($carousel, $carousel.data())
-        })
+    })
     })
 
 }(jQuery);
@@ -573,7 +573,7 @@ if (typeof jQuery === 'undefined') {
             this.$parent = this.getParent()
         } else {
             this.addAriaAndCollapsedClass(this.$element, this.$trigger)
-        }
+    }
 
         if (this.options.toggle) this.toggle()
     }
@@ -631,7 +631,7 @@ if (typeof jQuery === 'undefined') {
             this.transitioning = 0
             this.$element
                 .trigger('shown.bs.collapse')
-        }
+    }
 
         if (!$.support.transition) return complete.call(this)
 
@@ -670,7 +670,7 @@ if (typeof jQuery === 'undefined') {
                 .removeClass('collapsing')
                 .addClass('collapse')
                 .trigger('hidden.bs.collapse')
-        }
+    }
 
         if (!$.support.transition) return complete.call(this)
 
@@ -788,7 +788,7 @@ if (typeof jQuery === 'undefined') {
         if (!selector) {
             selector = $this.attr('href')
             selector = selector && /#[A-Za-z]/.test(selector) && selector.replace(/.*(?=#[^\s]*$)/, '') // strip for ie7
-        }
+    }
 
         var $parent = selector && $(selector)
 
@@ -847,7 +847,7 @@ if (typeof jQuery === 'undefined') {
             $parent
                 .toggleClass('open')
                 .trigger($.Event('shown.bs.dropdown', relatedTarget))
-        }
+    }
 
         return false
     }
@@ -959,7 +959,7 @@ if (typeof jQuery === 'undefined') {
                 .load(this.options.remote, $.proxy(function () {
                     this.$element.trigger('loaded.bs.modal')
                 }, this))
-        }
+    }
     }
 
     Modal.VERSION = '3.3.7'
@@ -1072,7 +1072,7 @@ if (typeof jQuery === 'undefined') {
                 if (document !== e.target &&
                     this.$element[0] !== e.target && !this.$element.has(e.target).length) {
                     this.$element.trigger('focus')
-                }
+        }
             }, this))
     }
 
@@ -1083,7 +1083,7 @@ if (typeof jQuery === 'undefined') {
             }, this))
         } else if (!this.isShown) {
             this.$element.off('keydown.dismiss.bs.modal')
-        }
+    }
     }
 
     Modal.prototype.resize = function () {
@@ -1091,7 +1091,7 @@ if (typeof jQuery === 'undefined') {
             $(window).on('resize.bs.modal', $.proxy(this.handleUpdate, this))
         } else {
             $(window).off('resize.bs.modal')
-        }
+    }
     }
 
     Modal.prototype.hideModal = function () {
@@ -1159,7 +1159,7 @@ if (typeof jQuery === 'undefined') {
 
         } else if (callback) {
             callback()
-        }
+    }
     }
 
     // these following methods are used to handle overflowing modals
@@ -1189,7 +1189,7 @@ if (typeof jQuery === 'undefined') {
         if (!fullWindowWidth) { // workaround for missing window.innerWidth in IE8
             var documentElementRect = document.documentElement.getBoundingClientRect()
             fullWindowWidth = documentElementRect.right - Math.abs(documentElementRect.left)
-        }
+    }
         this.bodyIsOverflowing = document.body.clientWidth < fullWindowWidth
         this.scrollbarWidth = this.measureScrollbar()
     }
@@ -1260,7 +1260,7 @@ if (typeof jQuery === 'undefined') {
             $target.one('hidden.bs.modal', function () {
                 $this.is(':visible') && $this.trigger('focus')
             })
-        })
+    })
         Plugin.call($target, option, this)
     })
 
@@ -1311,7 +1311,7 @@ if (typeof jQuery === 'undefined') {
         viewport: {
             selector: 'body',
             padding: 0
-        }
+    }
     }
 
     Tooltip.prototype.init = function (type, element, options) {
@@ -1340,7 +1340,7 @@ if (typeof jQuery === 'undefined') {
                 this.$element.on(eventIn + '.' + this.type, this.options.selector, $.proxy(this.enter, this))
                 this.$element.on(eventOut + '.' + this.type, this.options.selector, $.proxy(this.leave, this))
             }
-        }
+    }
 
         this.options.selector ?
             (this._options = $.extend({}, this.options, {trigger: 'manual', selector: ''})) :
@@ -1359,7 +1359,7 @@ if (typeof jQuery === 'undefined') {
                 show: options.delay,
                 hide: options.delay
             }
-        }
+    }
 
         return options
     }
@@ -1407,7 +1407,7 @@ if (typeof jQuery === 'undefined') {
     Tooltip.prototype.isInStateTrue = function () {
         for (var key in this.inState) {
             if (this.inState[key]) return true
-        }
+    }
 
         return false
     }
@@ -1511,7 +1511,7 @@ if (typeof jQuery === 'undefined') {
                     .one('bsTransitionEnd', complete)
                     .emulateTransitionEnd(Tooltip.TRANSITION_DURATION) :
                 complete()
-        }
+    }
     }
 
     Tooltip.prototype.applyPlacement = function (offset, placement) {
@@ -1614,7 +1614,7 @@ if (typeof jQuery === 'undefined') {
         var $e = this.$element
         if ($e.attr('title') || typeof $e.attr('data-original-title') != 'string') {
             $e.attr('data-original-title', $e.attr('title') || '').attr('title', '')
-        }
+    }
     }
 
     Tooltip.prototype.hasContent = function () {
@@ -1631,7 +1631,7 @@ if (typeof jQuery === 'undefined') {
         if (elRect.width == null) {
             // width and height are missing in IE8, so compute them manually; see https://github.com/twbs/bootstrap/issues/14093
             elRect = $.extend({}, elRect, {width: elRect.right - elRect.left, height: elRect.bottom - elRect.top})
-        }
+    }
         var isSvg = window.SVGElement && el instanceof window.SVGElement
         // Avoid using $.offset() on SVGs since it gives incorrect results in jQuery 3.
         // See https://github.com/twbs/bootstrap/issues/20280
@@ -1676,7 +1676,7 @@ if (typeof jQuery === 'undefined') {
             } else if (rightEdgeOffset > viewportDimensions.right) { // right overflow
                 delta.left = viewportDimensions.left + viewportDimensions.width - rightEdgeOffset
             }
-        }
+    }
 
         return delta
     }
@@ -1704,7 +1704,7 @@ if (typeof jQuery === 'undefined') {
             if (this.$tip.length != 1) {
                 throw new Error(this.type + ' `template` option must consist of exactly 1 top-level element!')
             }
-        }
+    }
         return this.$tip
     }
 
@@ -1732,7 +1732,7 @@ if (typeof jQuery === 'undefined') {
                 self = new this.constructor(e.currentTarget, this.getDelegateOptions())
                 $(e.currentTarget).data('bs.' + this.type, self)
             }
-        }
+    }
 
         if (e) {
             self.inState.click = !self.inState.click
@@ -1740,7 +1740,7 @@ if (typeof jQuery === 'undefined') {
             else self.leave(self)
         } else {
             self.tip().hasClass('in') ? self.leave(self) : self.enter(self)
-        }
+    }
     }
 
     Tooltip.prototype.destroy = function () {
@@ -1951,7 +1951,7 @@ if (typeof jQuery === 'undefined') {
         if (!$.isWindow(this.$scrollElement[0])) {
             offsetMethod = 'position'
             offsetBase = this.$scrollElement.scrollTop()
-        }
+    }
 
         this.$body
             .find(this.selector)
@@ -1989,7 +1989,7 @@ if (typeof jQuery === 'undefined') {
 
         if (scrollTop >= maxScroll) {
             return activeTarget != (i = targets[targets.length - 1]) && this.activate(i)
-        }
+    }
 
         if (activeTarget && scrollTop < offsets[0]) {
             this.activeTarget = null
@@ -2021,7 +2021,7 @@ if (typeof jQuery === 'undefined') {
             active = active
                 .closest('li.dropdown')
                 .addClass('active')
-        }
+    }
 
         active.trigger('activate.bs.scrollspy')
     }
@@ -2069,7 +2069,7 @@ if (typeof jQuery === 'undefined') {
         $('[data-spy="scroll"]').each(function () {
             var $spy = $(this)
             Plugin.call($spy, $spy.data())
-        })
+    })
     })
 
 }(jQuery);
@@ -2341,7 +2341,7 @@ if (typeof jQuery === 'undefined') {
             this.$element.offset({
                 top: scrollHeight - height - offsetBottom
             })
-        }
+    }
     }
 
 
@@ -2388,7 +2388,7 @@ if (typeof jQuery === 'undefined') {
             if (data.offsetTop != null) data.offset.top = data.offsetTop
 
             Plugin.call($spy, data)
-        })
+    })
     })
 
 }(jQuery);

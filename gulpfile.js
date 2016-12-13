@@ -1,5 +1,8 @@
 /**
- * Created by Carlos Eduardo on 11/12/2016.
+ * GulpFile ele é responsavel por minificar todo o meu código css e js
+ *
+ * Para rodar o gulpfile digita no conole o comando: gulp --production
+ *
  */
 
 var elixir = require('laravel-elixir'),
@@ -15,7 +18,8 @@ elixir(function (mix) {
         //junta os dois arquivos em um soh
         .scripts([
             'jquery.js',
-            'bootstrap.js'
+            'bootstrap.js',
+            'custom.js'
         ], 'public/js/script.js')
 
         .less('app.less');
