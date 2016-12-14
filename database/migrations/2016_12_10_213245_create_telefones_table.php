@@ -24,8 +24,8 @@ class CreateTelefonesTable extends Migration
             $table->integer('sufixo');
             $table->timestamps();
 
-            $table->Integer('pessoa_id', false, true);
-            $table->foreign('pessoa_id')->references('pessoa_id')->on('pessoas')->onDelete('cascade');
+            $table->integer('pessoa_id');
+            $table->foreign('pessoa_id')->references('id')->on('pessoas')->onDelete('cascade');
         });
     }
 
